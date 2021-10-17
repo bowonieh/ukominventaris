@@ -1,25 +1,26 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Controllers\BaseController;
 use App\Models\UserModel;
 
 class UserController extends BaseController
 {
-    protected $user;
+    protected $pengguna;
 
     public function __construct()
+    
     {
-        $this->user = new UserModel();
+        $this->pengguna = new UserModel();
     }
     public function index()
     {
         //
         //Menampilkan data user
 
-        $a = $this->user;
+        $a = $this->pengguna;
 
         return $this->response->setJson($a->findAll());
+
     }
 }

@@ -7,6 +7,7 @@ class AuthController extends UserController{
     protected $session;
     public function __construct()
     {
+        parent::__construct();
         $this->session = session();
     }
     public function formlogin(){
