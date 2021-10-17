@@ -19,6 +19,7 @@ class AuthController extends UserController{
     public function check(){
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
+        //inisiasi usermodel
         $check = new UserModel();
         $d = $check->where(
                     array(
@@ -28,15 +29,21 @@ class AuthController extends UserController{
                 )->first();
         if($d > 0){
             $sess_data = [
+                'status'       => true,
                 'IS_LOGGED_IN' => true,
                 'id_user'      => $d['id_user'],
-                'level'        => $d['level']
+                'level'        => $d['level'],
+                'pesan'         => "Anda Berhasil Login"
             ];
             $this->session->set($sess_data);
             return $this->response->setJson($sess_data);
             //echo "login berhasil";
         }else{
-            echo "login Gagal";
+            $msg = [
+                'status'    => false,
+                'pesan'     => 'Login Gagal'
+            ];
+            return $this->response->setJson($msg);
         }
         
 

@@ -14,7 +14,7 @@
  Date: 14/10/2021 14:12:17
 */
 
-SET NAMES utf8mb4;
+SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
@@ -30,7 +30,7 @@ CREATE TABLE `barang` (
   `jumlah_barang` int NOT NULL,
   `sumber_dana` varchar(25) NOT NULL,
   PRIMARY KEY (`id_barang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of barang
@@ -49,7 +49,7 @@ CREATE TABLE `barang_keluar` (
   `jml_keluar` int NOT NULL,
   `id_supplier` int NOT NULL,
   PRIMARY KEY (`id_barang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of barang_keluar
@@ -68,7 +68,7 @@ CREATE TABLE `barang_masuk` (
   `jml_masuk` int NOT NULL,
   `id_supplier` int NOT NULL,
   PRIMARY KEY (`id_barang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of barang_masuk
@@ -90,7 +90,7 @@ CREATE TABLE `pinjam_barang` (
   `tgl_kembali` date DEFAULT NULL,
   `kondisi` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id_pinjam`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of pinjam_barang
@@ -109,7 +109,7 @@ CREATE TABLE `stok` (
   `jml_keluar` int NOT NULL,
   `total_barang` int NOT NULL,
   PRIMARY KEY (`id_barang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of stok
@@ -127,7 +127,7 @@ CREATE TABLE `supplier` (
   `alamat_supplier` varchar(100) NOT NULL,
   `telp_supplier` varchar(13) NOT NULL,
   PRIMARY KEY (`id_supplier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 
 -- ----------------------------
 -- Records of supplier
@@ -149,7 +149,7 @@ CREATE TABLE `user` (
   `password` text NOT NULL,
   `level` char(20) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6;
 
 -- ----------------------------
 -- Records of user

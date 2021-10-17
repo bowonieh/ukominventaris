@@ -42,7 +42,7 @@
             //alert($('#inputUsername').val());
             $.ajax({
                 type: 'POST',
-                url : 'login/checklogin',
+                url : '<?=BASE;?>/checklogin',
                 data: {
                     username : $('#inputUsername').val(),
                     password: $('#inputPassword').val()
@@ -51,8 +51,8 @@
                    // var returnedData = JSON.parse(data);
                     //alert(returnedData.status);
                     //window.location.replace('/'+returnedData.location);
-                    if(data.status){
-                        $.notify(data.pesan,'success');
+                    if(data.IS_LOGGED_IN){
+                        $.notify("ANDA BERHASIL LOGIN",'success');
                        //alert(data.pesan);
                         setTimeout(function(){ window.location.href = 'profil' }, 2000);
                     }else{
